@@ -1,19 +1,33 @@
-import { Provider } from "react-redux";
+import {Provider} from 'react-redux';
 import {
-  Text,
-  View,
   FlatList,
   ListRenderItemInfo,
-  Image,
   TouchableOpacity,
-} from "react-native";
-import React, { useEffect } from "react";
-import { styles } from "./styles";
-import { Cripto } from "./src/types/cripto";
-import { fetchCryptoData, selectCryptoData } from "./src/store/criptoSlice";
-import { useAppDispatch, useAppSelector } from "./src/store/hooks";
+  View,
+} from 'react-native';
+import React, {useEffect} from 'react';
 
-import { store } from "./src/store/store";
+import {Cripto} from './src/types/cripto';
+import {fetchCryptoData, selectCryptoData} from './src/store/criptoSlice';
+import {useAppDispatch, useAppSelector} from './src/store/hooks';
+
+import {store} from './src/store/store';
+
+import {
+  Container,
+  BannerContainer,
+  ProfileImage,
+  Title,
+  CryptoContainer,
+  CryptoName,
+  CryptoImage,
+  CryptoSymbol,
+  ButtonContainer,
+  ButtonText,
+  CryptoAbreviation,
+  CryptoListContainer,
+  CryptoList,
+} from './styles';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -23,48 +37,46 @@ const App = () => {
     dispatch(fetchCryptoData());
   }, [dispatch]);
 
-  const renderItem = ({ item }: ListRenderItemInfo<Cripto>) => {
-  
-    
+  const renderItem = ({item}: ListRenderItemInfo<Cripto>) => {
     return (
-      <View style={styles.cryptoContainer}>
-        <View style={styles.cryptoSymbol}>
-          <Image
+      <CryptoContainer>
+        <CryptoSymbol>
+          <CryptoImage
             source={{
               uri: `https://messari.io/asset-images/${item.id.toLowerCase()}/64.png`,
             }}
-            style={styles.cryptoImage}
           />
           <View>
-            <Text style={styles.cryptoName}>{item.name}</Text>
-            <Text style={styles.cryptoAbreviation}>{item.symbol}</Text>
+            <CryptoName>{item.name}</CryptoName>
+            <CryptoAbreviation>{item.symbol}</CryptoAbreviation>
           </View>
-        </View>
-      </View>
+        </CryptoSymbol>
+      </CryptoContainer>
     );
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.bannerContainer}>
-        <Text style={styles.tittle}>CryptoTracker Pro</Text>
-        <Image
-          source={require("./src/assets/perfil.png")}
-          style={styles.profileImage}
+    <Container>
+      <BannerContainer>
+        <Title>CryptoTracker Pro</Title>
+        <ProfileImage source={require('./src/assets/perfil.png')} />
+      </BannerContainer>
+      <CryptoListContainer>
+        <FlatList
+          data={cryptoData.slice(0, 3)}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+          style={{marginBottom: 10}}
         />
-      </View>
-      <FlatList
-        data={cryptoData.slice(0, 3)}
-        renderItem={renderItem}
-        showsVerticalScrollIndicator={false}
-      />
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>+ Add a Cryptocurrency</Text>
+      </CryptoListContainer>
+      <ButtonContainer>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => console.log('Pressed!')}>
+          <ButtonText>+ Add a Cryptocurrency</ButtonText>
         </TouchableOpacity>
-      </View>
-     
-    </View>
+      </ButtonContainer>
+    </Container>
   );
 };
 

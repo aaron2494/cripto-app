@@ -1,80 +1,106 @@
-import { StyleSheet } from "react-native";
+import styled from "styled-components/native";
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
 
-  bannerContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "#2995bb",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    width: "100%",
-    height: 150,
-  },
+export const Container = styled.View`
+  flex: 1;
+  background-color: #fff;
+`;
 
-  profileImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 25,
-    marginRight: 10,
-    marginTop: 30,
-  },
+export const BannerContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #385775;
+  padding-vertical: 10px;
+  padding-horizontal: 20px;
+  width: 100%;
+  height: 120px;
+`;
 
-  tittle: {
-    marginTop: 30,
-    fontSize: 25,
-    flex: 1,
-    color: "#fff",
-  },
-  cryptoContainer: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    paddingTop: 10,
-  },
-  cryptoName: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#333",
-    marginRight: 80,
-  },
-  cryptoImage: {
-    width: 40,
-    height: 40,
-    marginTop: 20,
-    marginRight: 10,
-    marginLeft: 10,
-  },
-  cryptoSymbol: {
-    flexDirection: "row",
-    paddingTop: 20,
-  },
-  cryptoAbreviation: {
-    fontSize: 16,
-    fontWeight: "normal",
-    color: "#333",
-  },
+export const ProfileImage = styled.Image`
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+  margin-right: 10px;
+  
+`;
 
-  buttonContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingBottom: 20,
-    marginBottom: 250,
-  },
-  button: {
-    backgroundColor: "#2995bb",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-  },
-});
+export const Title = styled.Text`
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 25px;
+  flex: 1;
+  color: #fff;
+`;
+
+export const CryptoContainer = styled.View`
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-bottom-color: #ccc;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  border-bottom-width: 1px;
+  width: 90%;
+`;
+
+
+export const CryptoName = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+`;
+
+export const CryptoImage = styled.Image`
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+`;
+
+export const CryptoAbreviation = styled.Text`
+  font-size: 16px;
+  font-weight: normal;
+  color: #333;
+`;
+
+export const CryptoSymbol = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+
+export const CryptoListContainer = styled.View`
+  flex: 1;
+  margin-top: 20px;
+  max-height: 500px; 
+  overflow-y: scroll; 
+`;
+
+export const CryptoList = styled.FlatList`
+  margin-bottom: 20px;
+`;
+
+export const ButtonContainer = styled.View`
+width: 100%;
+align-items: center;
+justify-content: center;
+padding: 10px; 
+background-color: #fff; 
+position: relative; 
+bottom: 70px;
+`;
+
+
+export const ButtonText = styled.Text`
+color: #385775;
+font-size: 18px;
+padding: 6px 8px;
+background-color: white;
+border-radius: 5px;
+
+`;
