@@ -8,7 +8,7 @@ import { ReactNode } from "react";
     metrics: {
       market_data: {
         rank: ReactNode;
-        percent_change_usd_last_24_hours: any;
+        percent_change_usd_last_24_hours: number;
         price_usd: number;
       };
     };

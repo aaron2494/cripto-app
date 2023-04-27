@@ -7,19 +7,22 @@ export const Container = styled.View`
 `;
 
 export const BannerContainer = styled.View`
+
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #385775;
+  background-color: ${({ theme }) => theme.blue};
   padding-vertical: 10px;
   padding-horizontal: 20px;
   width: 100%;
   height: 120px;
+  left: 0px;
+  top: 0px;
 `;
 
 export const ProfileImage = styled.Image`
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height:55px;
   border-radius: 25px;
   margin-right: 10px;
   
@@ -28,21 +31,22 @@ export const ProfileImage = styled.Image`
 export const Title = styled.Text`
   margin-top: 10px;
   margin-left: 15px;
-  font-size: 25px;
-  flex: 1;
+  font-size: 20px;
   color: #fff;
 `;
 
 export const CryptoContainer = styled.View`
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-top: 10px;
-  border-bottom-color: #ccc;
-  margin-left: 30px;
-  margin-bottom: 15px;
-  border-bottom-width: 1px;
-  width: 90%;
+font-size: 16px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-self: center;
+padding: 20px 10px;
+width: 90%;
+border-color: ${({theme}) => theme.grey};
+border-bottom-width: 1px;
+border-style: solid;
+background-color: ${({theme}) => theme.primary};
 `;
 
 
@@ -54,8 +58,8 @@ export const CryptoName = styled.Text`
 `;
 
 export const CryptoImage = styled.Image`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-top: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -68,9 +72,9 @@ export const CryptoAbreviation = styled.Text`
 `;
 
 export const CryptoSymbol = styled.View`
-  flex-direction: row;
-  align-items: center;
-  padding-top: 20px;
+justify-content: flex-start;
+align-items: center;
+flex-direction: row;
 `;
 
 
